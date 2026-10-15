@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mohammed Roshan | Academic & Research Portfolio</title>
+<meta name="description" content="Academic and research portfolio of Mohammed Roshan, B.Tech Information Technology graduate (2026), focused on artificial intelligence, machine learning, explainable AI, data science and IoT-enabled systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F5F4EE; --paper-2:#DCE5DC; --ink:#173D32; --muted:#59675F; --line:#D8DED5;
+    --forest:#173D32; --forest-2:#244F42; --on-forest:#F5F4EE; --on-forest-muted:#C0D0C5;
+    --pink:#B65D42; --blue:#4779AD;
+    --link:#245B49;
+    --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+    --body:"Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:var(--link);text-underline-offset:3px}
+  a:focus-visible,.btn:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:4px}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;gap:22px;padding-top:12px;padding-bottom:12px;overflow-x:auto;white-space:nowrap;font-size:15px}
+  nav .brand{font-family:var(--display);font-weight:800;color:var(--ink);text-decoration:none;margin-right:auto;font-size:17px}
+  nav a:not(.brand){color:var(--muted);text-decoration:none}
+  nav a:not(.brand):hover{color:var(--ink)}
+
+  /* hero */
+  header{padding:72px 0 80px}
+  .hero{max-width:760px}
+  header{padding:96px 0 88px}
+  h1{font-family:var(--display);font-weight:800;font-size:clamp(3rem,8.5vw,6rem);line-height:.95;letter-spacing:-.035em;margin:0 0 22px}
+  .lead{font-size:1.2rem;color:var(--muted);max-width:34em;margin:0 0 30px}
+  .btns{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{display:inline-block;padding:12px 22px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;border:1.5px solid var(--ink);color:var(--ink);transition:background .2s,color .2s}
+  .btn:hover{background:var(--ink);color:var(--paper)}
+  .btn.primary{background:var(--forest);border-color:var(--forest);color:var(--on-forest)}
+  .btn.primary:hover{background:var(--forest-2);border-color:var(--forest-2);color:#fff}
+
+  /* hero panel: the one memorable element */
+  .panel{background:var(--forest);color:var(--on-forest);border-radius:22px;padding:26px 26px 22px;box-shadow:0 30px 60px -30px rgba(10,40,30,.55)}
+  .panel h2{font-family:var(--display);font-size:1.05rem;font-weight:700;margin:0 0 4px;color:#fff}
+  .panel .sub{font-size:.88rem;color:var(--on-forest-muted);margin:0 0 18px}
+  .readings{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:22px}
+  .reading{background:rgba(255,255,255,.07);border-radius:12px;padding:10px 12px}
+  .reading b{display:block;font-family:var(--display);font-size:1.25rem;font-weight:700;color:#fff;font-variant-numeric:tabular-nums}
+  .reading span{font-size:.78rem;color:var(--on-forest-muted)}
+  .why{font-size:.9rem;font-weight:600;margin:0 0 10px}
+  .bars{list-style:none;margin:0;padding:0}
+  .bars li{display:grid;grid-template-columns:104px 1fr;align-items:center;gap:10px;margin:7px 0;font-size:.85rem}
+  .track{position:relative;height:12px}
+  .track::before{content:"";position:absolute;left:50%;top:-3px;bottom:-3px;width:1px;background:rgba(255,255,255,.3)}
+  .bar{position:absolute;top:0;height:100%;border-radius:3px;width:0;transition:width 1.1s cubic-bezier(.2,.7,.2,1)}
+  .bar.pos{left:50%;background:var(--pink)}
+  .bar.neg{right:50%;background:var(--blue)}
+  .loaded .bar{width:var(--w)}
+  .panel .note{font-size:.78rem;color:var(--on-forest-muted);margin:16px 0 0}
+
+  /* sections */
+  section{border-top:1px solid var(--line);padding:56px 0}
+  .row{display:grid;grid-template-columns:220px 1fr;gap:36px}
+  h2.title{font-family:var(--display);font-weight:800;font-size:1.7rem;line-height:1.1;letter-spacing:-.02em;margin:0}
+  .row > div > :first-child{margin-top:0}
+  p{margin:0 0 14px;max-width:42em}
+  .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:26px 20px;margin-top:30px}
+  .fact b{display:block;font-family:var(--display);font-weight:800;font-size:2rem;line-height:1.1;letter-spacing:-.02em}
+  .fact span{font-size:.9rem;color:var(--muted)}
+
+
+  /* multilingual communication */
+  .language-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:22px}
+  .language-card{background:var(--paper-2);border:1px solid var(--line);border-radius:14px;padding:18px 16px}
+  .language-card.primary{background:var(--forest);border-color:var(--forest);color:var(--on-forest)}
+  .language-card b{display:block;font-family:var(--display);font-size:1.08rem;margin-bottom:4px}
+  .language-card span{font-size:.9rem;color:var(--muted)}
+  .language-card.primary span{color:var(--on-forest-muted)}
+  @media (max-width:700px){.language-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+  /* education */
+  .edu-head{font-family:var(--display);font-weight:700;font-size:1.2rem;margin:0}
+  .edu-sub{color:var(--muted);margin:2px 0 18px;font-size:.95rem}
+  table{width:100%;border-collapse:collapse;font-size:.95rem;margin-bottom:34px}
+  th{text-align:left;font-weight:600;color:var(--muted);font-size:.88rem;padding:6px 10px 8px 0;border-bottom:1.5px solid var(--ink)}
+  td{padding:9px 10px 9px 0;border-bottom:1px solid var(--line)}
+  td:last-child,th:last-child{text-align:right;padding-right:0;font-weight:600}
+  .school{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-top:1px solid var(--line)}
+  .school b{font-family:var(--display);font-size:1.05rem}
+  .school small{display:block;color:var(--muted);font-size:.9rem}
+  .school .score{font-family:var(--display);font-weight:800;font-size:1.3rem;white-space:nowrap}
+
+  /* skills */
+  .skillrow{display:grid;grid-template-columns:170px 1fr;gap:6px 24px;padding:14px 0;border-bottom:1px solid var(--line)}
+  .skillrow:first-child{padding-top:0}
+  .skillrow dt{font-family:var(--display);font-weight:700}
+  .skillrow dd{margin:0;color:var(--muted)}
+
+  /* projects */
+  .project{border-radius:22px;padding:34px;margin-bottom:22px}
+  .project.major{background:var(--forest);color:var(--on-forest)}
+  .project.major .meta,.project.major li{color:var(--on-forest)}
+  .project.major .meta{color:var(--on-forest-muted)}
+  .project.major a{color:#BFE3FF}
+  .project.minor{background:var(--paper-2)}
+  .project h3{font-family:var(--display);font-weight:800;font-size:1.7rem;line-height:1.1;letter-spacing:-.02em;margin:0 0 6px}
+  .project .meta{font-size:.92rem;color:var(--muted);margin:0 0 18px}
+  .project ul{margin:0 0 18px;padding-left:20px}
+  .project li{margin:7px 0;max-width:46em}
+  .project li b{font-weight:600}
+  .stack{font-size:.92rem;opacity:.85;margin:0 0 14px}
+
+  /* more */
+  .cols{display:grid;grid-template-columns:minmax(0,1fr);gap:30px;max-width:760px;margin:0 auto}
+  .cols h3{font-family:var(--display);font-weight:700;font-size:1.1rem;margin:0 0 10px}
+  .cols ul{margin:0;padding-left:18px}
+  .cols li{margin:7px 0}
+  .ielts{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;text-align:center;margin:6px 0 12px}
+  .ielts div{border-top:2px solid var(--ink);padding-top:6px}
+  .ielts b{display:block;font-family:var(--display);font-size:1.4rem}
+  .ielts span{font-size:.78rem;color:var(--muted)}
+  .language-credentials{width:100%}
+  .ielts-highlight{max-width:520px}
+  .other-languages{max-width:520px}
+  .language-credentials h3{font-family:var(--display);font-weight:800;font-size:1.35rem;margin:0 0 12px}
+  .ielts-highlight{background:var(--forest);color:var(--on-forest);border-radius:18px;padding:18px;margin:0 0 22px}
+  .ielts-overall{display:flex;align-items:center;gap:12px;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,.22);padding-bottom:14px;margin-bottom:14px}
+  .ielts-overall span{font-size:.9rem;color:var(--on-forest-muted)}
+  .ielts-overall b{font-family:var(--display);font-size:2.8rem;line-height:1;color:#fff}
+  .ielts-overall small{font-size:.78rem;color:var(--on-forest-muted);margin-left:auto}
+  .ielts-scores{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;text-align:center}
+  .ielts-scores div{background:rgba(255,255,255,.08);border-radius:10px;padding:10px 4px}
+  .ielts-scores b{display:block;font-family:var(--display);font-size:1.35rem;color:#fff}
+  .ielts-scores span{font-size:.75rem;color:var(--on-forest-muted)}
+  .language-credentials .other-languages-title{font-size:1.05rem;margin:0 0 10px}
+  .other-languages{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .other-languages div{background:var(--paper-2);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+  .other-languages b,.other-languages span{display:block}
+  .other-languages b{font-family:var(--display);font-size:.95rem}
+  .other-languages span{font-size:.82rem;color:var(--muted)}
+  @media(max-width:500px){.ielts-overall small{width:100%;margin-left:0}.ielts-scores{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+  /* goals / contact */
+  .ph{background:#FFE98A;color:#5a4300;padding:1px 6px;border-radius:4px}
+  .mail{font-family:var(--display);font-weight:800;font-size:clamp(1.4rem,4.5vw,2.6rem);letter-spacing:-.02em;color:var(--ink);text-decoration-thickness:3px;text-decoration-color:var(--pink);word-break:break-word}
+  .links{display:flex;flex-wrap:wrap;gap:8px 26px;margin-top:20px}
+  footer{border-top:1px solid var(--line);padding:26px 0 50px;color:var(--muted);font-size:.9rem}
+
+  @media (max-width:860px){
+    .hero{grid-template-columns:1fr}
+    .row{grid-template-columns:1fr;gap:18px}
+    header{padding:48px 0 56px}
+    .skillrow{grid-template-columns:1fr}
+    .project{padding:24px}
+  }
+  @media (prefers-reduced-motion:reduce){.bar{transition:none}html{scroll-behavior:auto}}
+  @media print{nav,.btns{display:none}.project.major{background:none;color:inherit;border:1px solid #999}.project.major *{color:inherit!important}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="brand" href="#top">Mohammed Roshan</a>
+  <a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a>
+  <a href="#projects">Projects</a><a href="#more">Credentials</a><a href="#goals">Goals</a><a href="#contact">Contact</a>
+</div></nav>
+
+<div class="wrap" id="top">
+
+<header>
+  <div class="hero">
+    <div>
+      <h1>Mohammed Roshan</h1>
+      <p class="lead">B.Tech Information Technology graduate (2026). I build AI-enabled full-stack and IoT systems, from soil sensors and machine-learning models to APIs and web and mobile apps. I am preparing for postgraduate study in artificial intelligence, machine learning and data science.</p>
+      <div class="btns">
+        <a class="btn primary" href="#projects">See my projects</a>
+        <a class="btn" href="CV.pdf">Download CV</a>
+        <a class="btn" href="https://github.com/Mohammed7025">GitHub</a>
+        <a class="btn" href="https://linkedin.com/in/roshan-ov">LinkedIn</a>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<section id="about">
+  <div class="row">
+    <h2 class="title">About</h2>
+    <div>
+      <p>I'm an Information Technology graduate focused on applied machine learning. My final-year project took a farming problem from raw soil sensors all the way to explainable recommendations on a web and mobile app, and I led the team of five that built it.</p>
+      <p>I'm now looking for a Master's programme that builds deeper foundations in machine learning and data-driven systems. My interests are applied machine learning, explainable AI, IoT-enabled intelligent systems, and natural language and sentiment analysis.</p>
+      <div class="facts">
+        <div class="fact"><b>7.87</b><span>B.Tech CGPA out of 10, First Class</span></div>
+        <div class="fact"><b>8.0</b><span>IELTS overall, Sep 2026</span></div>
+        <div class="fact"><b>2026</b><span>Graduation year</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="education">
+  <div class="row">
+    <h2 class="title">Education</h2>
+    <div>
+      <h3 class="edu-head">B.Tech, Information Technology</h3>
+      <p class="edu-sub">MEA Engineering College, Perinthalmanna. APJ Abdul Kalam Technological University. 2022 to 2026. CGPA 7.87/10.</p>
+      <table>
+        <thead><tr><th>Relevant coursework</th><th>Semester</th><th>Grade</th></tr></thead>
+        <tbody>
+          <tr><td>Machine Learning</td><td>7</td><td>A+</td></tr>
+          <tr><td>Data Analytics</td><td>7</td><td>A+</td></tr>
+          <tr><td>Algorithm Analysis and Design</td><td>6</td><td>A+</td></tr>
+          <tr><td>Internet of Things</td><td>8</td><td>A+</td></tr>
+          <tr><td>Computer Graphics</td><td>8</td><td>A+</td></tr>
+          <tr><td>Vector Calculus, Differential Equations and Transforms</td><td>2</td><td>A+</td></tr>
+          <tr><td>Data Science</td><td>6</td><td>A</td></tr>
+          <tr><td>Soft Computing</td><td>6</td><td>A</td></tr>
+          <tr><td>Data Structures</td><td>3</td><td>A</td></tr>
+          <tr><td>Software Architecture</td><td>8</td><td>A</td></tr>
+        </tbody>
+      </table>
+      <div class="school"><div><b>Higher Secondary, Computer Science</b><small>GMHSS Perinthalmanna, 2020 to 2022</small></div><div class="score">91%</div></div>
+      <div class="school"><div><b>Secondary, Class 10</b><small>PHSS Pandallur, 2019 to 2020. A+ in every subject.</small></div><div class="score">99%</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="row">
+    <h2 class="title">Skills</h2>
+    <dl style="margin:0">
+      <div class="skillrow"><dt>Languages</dt><dd>Python, JavaScript</dd></div>
+      <div class="skillrow"><dt>Machine learning and data</dt><dd>PyTorch, TensorFlow, scikit-learn, Pandas, NumPy, SHAP, Matplotlib, Plotly</dd></div>
+      <div class="skillrow"><dt>Backend and APIs</dt><dd>FastAPI, Node.js, REST APIs, JWT authentication, Postman, n8n workflow automation, Gemini API</dd></div>
+      <div class="skillrow"><dt>Databases</dt><dd>MongoDB Atlas, Firebase, MySQL, PostgreSQL (Supabase)</dd></div>
+      <div class="skillrow"><dt>Frontend and IoT</dt><dd>React, HTML, CSS, NodeMCU (ESP8266), sensor interfacing, Arduino IDE</dd></div>
+      <div class="skillrow"><dt>Tools</dt><dd>Git, GitHub, VS Code</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="projects">
+  <h2 class="title" style="margin-bottom:26px">Projects</h2>
+
+  <article class="project major">
+    <h3>AI-Driven Smart Agriculture System</h3>
+    <p class="meta">B.Tech major project. Project lead, team of 5. 2025 to 2026. Guide: Ms. Thasleena V A, Head of Department, IT.</p>
+    <p>Small and medium farmers often lack affordable soil testing and expert advice. We built a low-cost, end-to-end platform that reads live soil and weather data and returns crop, fertilizer and irrigation recommendations, with explanations a farmer can follow.</p>
+    <ul>
+      <li><b>Hardware and data.</b> A NodeMCU (ESP8266) reads NPK, moisture, pH, temperature and humidity sensors and syncs to Firebase in real time. Sensor readings, location-based weather and soil type feed the models.</li>
+      <li><b>Machine learning.</b> Transformer-based models trained on public datasets recommend crops and fertilizers and decide when irrigation should be on or off. SHAP explanations show which factors drove each recommendation.</li>
+      <li><b>Software.</b> A FastAPI backend with JWT authentication, a React web dashboard, a mobile app with a Malayalam language option, and AgroBot, a chatbot for crop, soil, irrigation and fertilizer questions.</li>
+    </ul>
+    <p class="stack">Python, PyTorch, TensorFlow, scikit-learn, FastAPI, React, Firebase, ESP8266, SHAP</p>
+    <a href="https://github.com/Mohammed7025/Smart-Agri-using-AI-and-iot">View the code on GitHub</a>
+  </article>
+
+  <article class="project minor">
+    <h3>AI Dietitian and Mental Health Tracker</h3>
+    <p class="meta">B.Tech mini project. Project lead, team of 5. April 2025. Guide: Ms. Thasleena V A, Head of Department, IT.</p>
+    <p>A full-stack web platform that combines personalised diet planning with mental-wellness tracking.</p>
+    <ul>
+      <li>Rule-based diet planner using BMI, dietary preferences and medical conditions, with a decision-tree fallback for edge cases.</li>
+      <li>Google Gemini API integration for a supportive chatbot and sentiment analysis of journal entries.</li>
+      <li>Daily mood, stress and sleep logging with interactive trend charts, and Firebase Authentication for sign-in.</li>
+      <li>Evaluated through user feedback.</li>
+    </ul>
+    <p class="stack">Node.js, MongoDB Atlas, Firebase Authentication, JavaScript, HTML, CSS, Gemini API</p>
+    <a href="https://github.com/Mohammed7025/Ai-dietitian-and-mental-health-tracker">View the code on GitHub</a>
+  </article>
+</section>
+
+<section id="more">
+  <h2 class="title" style="margin-bottom:26px">Credentials</h2>
+  <div class="cols">
+    <div>
+      <h3>Certifications</h3>
+      <ul>
+        <li>Python for Data Science, NPTEL (IIT Madras, SWAYAM), Elite + Silver, Jul to Aug 2025</li>
+        <li>Python: Introduction to Data Science and Machine Learning A-Z, Udemy, Apr 2025</li>
+        <li>AI for Entrepreneurship, Intel, Skill India Digital Hub, Jun 2025</li>
+      </ul>
+    </div>
+    <div class="language-credentials">
+      <h3>IELTS</h3>
+      <div class="ielts-highlight">
+        <div class="ielts-overall"><span>Overall Band</span><b>8.0</b><small>Test date: 28 September 2026</small></div>
+        <div class="ielts-scores">
+          <div><b>8.5</b><span>Listening</span></div>
+          <div><b>9.0</b><span>Reading</span></div>
+          <div><b>7.0</b><span>Writing</span></div>
+          <div><b>7.5</b><span>Speaking</span></div>
+        </div>
+      </div>
+      <h3 class="other-languages-title">Other Languages</h3>
+      <div class="other-languages">
+        <div><b>Malayalam</b><span>Native</span></div>
+        <div><b>Hindi</b><span>Advanced</span></div>
+        <div><b>Arabic</b><span>Intermediate</span></div>
+        <div><b>Urdu</b><span>Intermediate</span></div>
+      </div>
+    </div>
+    <div>
+      <h3>Leadership and training</h3>
+      <ul>
+        <li>Assistant Technical Coordinator, XORIT (IT Association)</li>
+        <li>Active member, MEA FOSS (Free and Open Source Software)</li>
+        <li>Young Innovators Programme 8.0, K-DISC, Dec 2025</li>
+        <li>Basic Life Support course, Aster MIMS Calicut, Aug 2025</li>
+        <li>iOS App Development workshop, iPlanet Education, Dec 2022</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="goals">
+  <div class="row">
+    <h2 class="title">Why a Master's, and why now</h2>
+    <div>
+      <p>My projects showed me that the hardest and most valuable part of a useful system is the data and the models behind it. Building the smart agriculture platform meant training models on public datasets, explaining their output to non-experts with SHAP, and connecting them to real sensors. I want to move from applying these techniques to understanding them deeply, with stronger foundations in machine learning, explainability and data-driven systems.</p>
+      <p><b>Long-term goal:</b> I aim to develop into an AI researcher and engineer who builds reliable, explainable, and socially useful intelligent systems. Through postgraduate study and research, I hope to strengthen my foundations in machine learning and data science, contribute to meaningful research, and eventually pursue doctoral study or research-oriented work.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="row">
+    <h2 class="title">Contact</h2>
+    <div>
+      <p style="margin-bottom:10px">The best way to reach me is email.</p>
+      <a class="mail" href="mailto:mohammedroshan1020@gmail.com">mohammedroshan1020@gmail.com</a>
+      <div class="links">
+        <a href="https://linkedin.com/in/roshan-ov">LinkedIn</a>
+        <a href="https://github.com/Mohammed7025">GitHub</a>
+        <span style="color:var(--muted)">Malappuram, Kerala, India</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>© <span id="yr"></span> Mohammed Roshan</footer>
+</div>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  // Grow the explanation bars once on load
+  requestAnimationFrame(function(){ setTimeout(function(){ document.body.classList.add('loaded'); }, 250); });
+</script>
+</body>
+</html>
